@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Espaço Digital</title>
+    <style>
+        /* Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Perfil */
+        .profile {
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 15px auto;
+            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .bio {
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Seção de Cartões / Links */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 18px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #f8fafc;
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            background-color: #334155;
+            border-color: #a855f7;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card span {
+            font-size: 1.2rem;
+        }
+
+        /* Rodapé */
+        footer {
+            margin-top: 40px;
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="profile">
+            <div class="avatar">🚀</div>
+            <h1>Seu Nome Aqui</h1>
+            <p class="bio">Criador de conteúdo, entusiasta de tecnologia & explorador do mundo digital.</p>
+        </header>
+
+        <main class="links">
+            <a href="https://github.com" target="_blank" class="card">
+                <span>💻 Meu GitHub</span>
+                ➔
+            </a>
+
+            <a href="https://instagram.com" target="_blank" class="card">
+                <span>📸 Instagram</span>
+                ➔
+            </a>
+
+            <a href="#" class="card">
+                <span>🎨 Meu Portfólio / Projetos</span>
+                ➔
+            </a>
+
+            <a href="#" class="card">
+                <span>✉️ Entre em Contato</span>
+                ➔
+            </a>
+        </main>
+
+        <footer>
+            <p>© 2026 • Feito com ❤️ no GitHub Pages</p>
+        </footer>
+    </div>
+
+</body>
+</html>
