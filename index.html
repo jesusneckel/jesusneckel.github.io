@@ -3,53 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visualizador de Código</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Nexus — Criando o Futuro Digital</title>
+  <style>
+    /* RESET E VARIÁVEIS GLORAIS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --accent-color: #6366f1;
+      --accent-hover: #4f46e5;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 10%;
+      background-color: rgba(15, 23, 42, 0.9);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #334155;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-color);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 6rem 1rem 4rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #a5b4fc, var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    /* SEÇÃO DE PROJETOS/SERVIÇOS */
+    .features {
+      padding: 4rem 10%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-color);
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .card p {
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #334155;
+      color: var(--text-muted);
+      margin-top: 4rem;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="code-container">
-    <div class="tabs">
-      <button class="tab-btn active" onclick="openTab(event, 'html')">HTML</button>
-      <button class="tab-btn" onclick="openTab(event, 'css')">CSS</button>
-      <button class="tab-btn" onclick="openTab(event, 'js')">JavaScript</button>
-    </div>
+  <header>
+    <div class="logo">⚡ NEXUS</div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div id="html" class="tab-content active">
-      <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Meu Site&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-    </div>
+  <section class="hero" id="inicio">
+    <h1>Transformando ideias em experiências digitais</h1>
+    <p>Construindo aplicações web modernas, rápidas e com foco na melhor experiência do usuário.</p>
+    <button class="btn" id="interactiveBtn">Clique para Interagir</button>
+  </section>
 
-    <div id="css" class="tab-content">
-      <pre><code>body {
-  font-family: Arial, sans-serif;
-  background-color: #1e1e1e;
-  color: #ffffff;
-  margin: 0;
-  padding: 20px;
-}
-
-h1 {
-  color: #007acc;
-}</code></pre>
-    </div>
-
-    <div id="js" class="tab-content">
-      <pre><code>console.log("Olá do JavaScript!");
-
-function minhaFuncao() {
-  alert("Abas funcionando com sucesso!");
-}</code></pre>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <section class="features" id="recursos">
+    <h2>Nossos Destaques</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🚀 Alta Performance</h3>
+        <p>Código limpo, otimizado e focado em tempo de carregamento rápido em qualquer dispositivo.</p>
+      </div>
+      <div class="card">
+        <h3>🎨 Design Moderno</h3>
+        <p>Interfaces fluidas, responsivas e alinhadas com as principais tendências de UI/UX.</p>
+      </div>
+      <div class="card">
+        <h3>🔒 Segurança e Escalabilidade</h3>
+        <p>Projetado com boas práticas para garantir estabilidade e facilidade de manutenção.</p>
+      </div>
