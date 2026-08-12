@@ -1,0 +1,17 @@
+function openTab(event, tabName) {
+  // Esconde todos os conteúdos de abas
+  const tabContents = document.querySelectorAll('.tab-content');
+  tabContents.forEach(content => {
+    content.classList.remove('active');
+  });
+
+  // Remove o estado ativo de todos os botões
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  tabButtons.forEach(button => {
+    button.classList.remove('active');
+  });
+
+  // Exibe a aba clicada e ativa o botão correspondente
+  document.getElementById(tabName).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
